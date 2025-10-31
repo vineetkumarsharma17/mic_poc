@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
               final ctrl = Get.put(DrivenAiPermissionController());
-              final status = ctrl.checkMicrophonePermission();
+              final status = await ctrl.checkMicrophonePermission();
               print('Microphone permission status: $status');
             },
             child: const Text('Request Permissions')),
